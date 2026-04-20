@@ -9,35 +9,33 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --blue-50:  #EDF6FF;
-      --blue-100: #C8E4FF;
-      --blue-200: #94C9FA;
-      --blue-400: #4AA8F2;
-      --blue-500: #2B90E0;
-      --blue-600: #1A6BB5;
-      --blue-800: #0D3F72;
-      --sky:      #D8EFFE;
-      --foam:     #F0F8FF;
-      --white:    #FFFFFF;
-      --text:     #0D3F72;
-      --text-2:   #4A7BAB;
-      --text-3:   #8AAFC9;
-      --green:    #4CAF7D;
-      --green-bg: #E8F7EF;
-      --red:      #E05C5C;
-      --red-bg:   #FDEAEA;
-      --radius:   14px;
+      --blue-50:   #EDF6FF;
+      --blue-100:  #C8E4FF;
+      --blue-400:  #4AA8F2;
+      --blue-500:  #2B90E0;
+      --blue-600:  #1A6BB5;
+      --blue-800:  #0D3F72;
+      --sky:       #D8EFFE;
+      --white:     #FFFFFF;
+      --text:      #0D3F72;
+      --text-2:    #4A7BAB;
+      --text-3:    #8AAFC9;
+      --green-bg:  #E8F7EF;
+      --red:       #E05C5C;
+      --red-bg:    #FDEAEA;
+      --radius:    14px;
       --radius-lg: 20px;
       --radius-xl: 28px;
     }
 
     body {
-      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Nunito', -apple-system, sans-serif;
       background: linear-gradient(180deg, #C8E4FF 0%, #EDF6FF 120px, #F0F8FF 100%);
       color: var(--text);
       min-height: 100vh;
     }
 
+    /* ── Header ── */
     .header-bg {
       background: linear-gradient(160deg, #1A6BB5 0%, #2B90E0 60%, #4AA8F2 100%);
       padding: 1.5rem 1rem 3rem;
@@ -51,18 +49,16 @@
       bottom: -1px; left: 0; right: 0; height: 40px;
       background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 40'%3E%3Cpath fill='%23F0F8FF' d='M0,20 C150,40 350,0 600,20 C850,40 1050,0 1200,20 L1200,40 L0,40 Z'/%3E%3C/svg%3E") center bottom / cover no-repeat;
     }
-    .header-title {
-      font-size: 26px; font-weight: 800; color: #fff;
-      display: flex; align-items: center; justify-content: center; gap: 10px;
-    }
-    .header-sub { font-size: 14px; color: rgba(255,255,255,0.75); margin-top: 4px; font-weight: 600; }
-    .whale-row { display: flex; justify-content: center; gap: 18px; margin-top: 10px; opacity: 0.55; }
+    .header-title { font-size: 26px; font-weight: 800; color: #fff; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .header-sub   { font-size: 14px; color: rgba(255,255,255,0.75); margin-top: 4px; font-weight: 600; }
+    .whale-row    { display: flex; justify-content: center; gap: 18px; margin-top: 10px; opacity: 0.55; }
     .whale-row span { font-size: 22px; }
     .w1 { animation: bob 3s ease-in-out infinite; }
     .w2 { animation: bob 3s ease-in-out infinite 0.8s; }
     .w3 { animation: bob 3s ease-in-out infinite 1.6s; }
     @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
 
+    /* ── Layout ── */
     .app { max-width: 520px; margin: 0 auto; padding: 0 1rem 4rem; }
 
     .nav-wrap {
@@ -71,9 +67,9 @@
       margin: -20px auto 1.5rem; position: relative; z-index: 10; max-width: 340px;
     }
     .nav-btn {
-      flex: 1; background: none; border: none; padding: 9px 16px;
-      border-radius: 18px; font-family: 'Nunito', sans-serif; font-size: 14px;
-      font-weight: 700; cursor: pointer; color: var(--text-2); transition: all 0.2s;
+      flex: 1; background: none; border: none; padding: 9px 16px; border-radius: 18px;
+      font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 700;
+      cursor: pointer; color: var(--text-2); transition: all 0.2s;
     }
     .nav-btn.active { background: var(--blue-500); color: #fff; box-shadow: 0 2px 8px rgba(43,144,224,0.35); }
     .nav-btn:hover:not(.active) { color: var(--text); background: var(--blue-50); }
@@ -81,45 +77,48 @@
     .page { display: none; }
     .page.active { display: block; }
 
+    /* ── Stat cards ── */
     .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 1.25rem; }
     .stat-card { background: var(--white); border-radius: var(--radius-lg); padding: 14px 12px 12px; text-align: center; box-shadow: 0 2px 10px rgba(42,110,180,0.08); }
-    .stat-icon { font-size: 20px; margin-bottom: 4px; }
+    .stat-icon  { font-size: 20px; margin-bottom: 4px; }
     .stat-label { font-size: 11px; color: var(--text-3); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px; }
     .stat-value { font-size: 20px; font-weight: 800; color: var(--blue-600); }
     .stat-value.sm { font-size: 15px; padding-top: 2px; }
 
+    /* ── Toast ── */
     .toast {
-      border-radius: var(--radius); padding: 12px 16px; font-size: 14px;
-      font-weight: 600; margin-bottom: 1rem; display: none; text-align: center;
+      border-radius: var(--radius); padding: 12px 16px; font-size: 14px; font-weight: 600;
+      margin-bottom: 1rem; display: none; text-align: center;
       background: var(--green-bg); color: #1A6B3A; border: 1.5px solid #A8E0BF;
     }
     .toast.error { background: var(--red-bg); color: #8B1A1A; border-color: #F5B8B8; }
 
+    /* ── Tracker card ── */
     .tracker-card {
       background: var(--white); border-radius: var(--radius-xl);
       padding: 2rem 1.5rem 1.75rem; text-align: center;
-      box-shadow: 0 4px 20px rgba(42,110,180,0.1); margin-bottom: 1.25rem; position: relative; overflow: hidden;
+      box-shadow: 0 4px 20px rgba(42,110,180,0.1); margin-bottom: 1.25rem;
     }
-
     .sleep-icon { font-size: 52px; margin-bottom: 10px; display: block; line-height: 1; }
     .sleep-icon.pulse { animation: bigpulse 2s ease-in-out infinite; }
     @keyframes bigpulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
 
     .status-label { font-size: 12px; color: var(--text-3); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
+
     .stopwatch { font-size: 54px; font-weight: 800; letter-spacing: -2px; font-variant-numeric: tabular-nums; color: var(--blue-600); margin-bottom: 6px; line-height: 1; }
     .stopwatch.active-timer { color: var(--blue-500); }
+
     .start-hint { font-size: 13px; color: var(--text-3); min-height: 20px; margin-bottom: 1.5rem; font-weight: 600; }
 
     .btn-row { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
     .btn {
       padding: 12px 28px; border-radius: 50px; font-family: 'Nunito', sans-serif;
       font-size: 15px; font-weight: 800; cursor: pointer; border: none;
-      transition: transform 0.12s, box-shadow 0.12s, opacity 0.15s;
+      transition: transform 0.12s, opacity 0.15s;
     }
     .btn:active { transform: scale(0.95); }
-    .btn-start { background: linear-gradient(135deg, #2B90E0, #1A6BB5); color: #fff; box-shadow: 0 4px 14px rgba(43,144,224,0.4); }
-    .btn-start:hover { box-shadow: 0 6px 18px rgba(43,144,224,0.5); }
-    .btn-end { background: linear-gradient(135deg, #E05C5C, #C03030); color: #fff; box-shadow: 0 4px 14px rgba(224,92,92,0.4); display: none; }
+    .btn-start  { background: linear-gradient(135deg, #2B90E0, #1A6BB5); color: #fff; box-shadow: 0 4px 14px rgba(43,144,224,0.4); }
+    .btn-end    { background: linear-gradient(135deg, #E05C5C, #C03030); color: #fff; box-shadow: 0 4px 14px rgba(224,92,92,0.4); display: none; }
     .btn-cancel { background: var(--blue-50); border: 1.5px solid var(--blue-100); color: var(--text-2); display: none; }
     .btn-cancel:hover { background: var(--blue-100); }
     .btn:hover { opacity: 0.9; }
@@ -130,8 +129,9 @@
     .bubble:nth-child(3) { animation-delay: 1.1s; width: 6px; height: 6px; }
     @keyframes rise { 0%,100%{transform:translateY(0);opacity:0.3} 50%{transform:translateY(-6px);opacity:0.6} }
 
+    /* ── History ── */
     .history-header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 1rem; }
-    .history-title { font-size: 16px; font-weight: 800; color: var(--blue-600); }
+    .history-title  { font-size: 16px; font-weight: 800; color: var(--blue-600); }
     .filter-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .filter-row label { font-size: 12px; color: var(--text-2); font-weight: 700; }
     .filter-row input[type="date"] {
@@ -141,24 +141,37 @@
     }
     .clear-filter { font-size: 12px; color: var(--text-2); background: none; border: none; cursor: pointer; text-decoration: underline; font-family: 'Nunito', sans-serif; font-weight: 600; }
 
-    .sort-row { display: flex; gap: 6px; margin-bottom: 1rem; align-items: center; flex-wrap: wrap; }
+    .sort-row  { display: flex; gap: 6px; margin-bottom: 1rem; align-items: center; flex-wrap: wrap; }
     .sort-label { font-size: 11px; color: var(--text-3); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 2px; }
-    .sort-btn { font-family: 'Nunito', sans-serif; font-size: 12px; padding: 5px 12px; border-radius: 50px; border: 1.5px solid var(--blue-100); background: var(--white); color: var(--text-2); cursor: pointer; transition: all 0.15s; font-weight: 700; }
+    .sort-btn {
+      font-family: 'Nunito', sans-serif; font-size: 12px; padding: 5px 12px; border-radius: 50px;
+      border: 1.5px solid var(--blue-100); background: var(--white); color: var(--text-2);
+      cursor: pointer; transition: all 0.15s; font-weight: 700;
+    }
     .sort-btn.active { background: var(--blue-500); color: #fff; border-color: var(--blue-500); box-shadow: 0 2px 8px rgba(43,144,224,0.3); }
 
     .nap-list { display: flex; flex-direction: column; gap: 10px; }
-    .nap-item { background: var(--white); border-radius: var(--radius-lg); padding: 14px 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 2px 10px rgba(42,110,180,0.07); transition: box-shadow 0.15s; }
+    .nap-item {
+      background: var(--white); border-radius: var(--radius-lg); padding: 14px 16px;
+      display: flex; align-items: center; gap: 12px;
+      box-shadow: 0 2px 10px rgba(42,110,180,0.07); transition: box-shadow 0.15s;
+    }
     .nap-item:hover { box-shadow: 0 4px 16px rgba(42,110,180,0.13); }
-    .nap-icon { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--blue-100), var(--sky)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px; }
-    .nap-meta { flex: 1; min-width: 0; }
-    .nap-date { font-size: 11px; color: var(--text-3); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px; }
+    .nap-icon  { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--blue-100), var(--sky)); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 20px; }
+    .nap-meta  { flex: 1; min-width: 0; }
+    .nap-date  { font-size: 11px; color: var(--text-3); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 3px; }
     .nap-times { font-size: 15px; font-weight: 800; color: var(--text); }
     .nap-badge { background: var(--blue-50); border: 1.5px solid var(--blue-100); border-radius: 50px; padding: 4px 12px; font-size: 13px; color: var(--blue-600); font-weight: 800; white-space: nowrap; }
-    .nap-delete { background: none; border: none; color: var(--text-3); cursor: pointer; padding: 5px; border-radius: 50%; font-size: 13px; flex-shrink: 0; transition: color 0.15s, background 0.15s; line-height: 1; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; }
+    .nap-delete {
+      background: none; border: none; color: var(--text-3); cursor: pointer;
+      padding: 5px; border-radius: 50%; font-size: 13px; flex-shrink: 0;
+      transition: color 0.15s, background 0.15s; line-height: 1;
+      width: 26px; height: 26px; display: flex; align-items: center; justify-content: center;
+    }
     .nap-delete:hover { color: var(--red); background: var(--red-bg); }
 
     .empty-state { text-align: center; padding: 3rem 1rem; color: var(--text-3); font-size: 14px; font-weight: 600; line-height: 1.7; }
-    .empty-icon { font-size: 48px; margin-bottom: 12px; opacity: 0.5; }
+    .empty-icon  { font-size: 48px; margin-bottom: 12px; opacity: 0.5; }
     .footer-whales { text-align: center; margin-top: 2rem; font-size: 24px; opacity: 0.25; letter-spacing: 8px; }
   </style>
 </head>
@@ -180,6 +193,7 @@
     <button class="nav-btn" onclick="showPage('history', this)">📋 History</button>
   </nav>
 
+  <!-- TRACKER -->
   <div id="page-tracker" class="page active">
     <div class="stats-row">
       <div class="stat-card">
@@ -207,18 +221,17 @@
       <div id="stopwatch" class="stopwatch">00:00:00</div>
       <div id="start-hint" class="start-hint"></div>
       <div class="btn-row">
-        <button class="btn btn-start" id="btn-start" onclick="startNap()">🐳 Start nap</button>
-        <button class="btn btn-end"   id="btn-end"   onclick="endNap()">☀️ End nap</button>
+        <button class="btn btn-start"  id="btn-start"  onclick="startNap()">🐳 Start nap</button>
+        <button class="btn btn-end"    id="btn-end"    onclick="endNap()">☀️ End nap</button>
         <button class="btn btn-cancel" id="btn-cancel" onclick="cancelNap()">Cancel</button>
       </div>
       <div class="bubbles">
-        <div class="bubble"></div>
-        <div class="bubble"></div>
-        <div class="bubble"></div>
+        <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
       </div>
     </div>
   </div>
 
+  <!-- HISTORY -->
   <div id="page-history" class="page">
     <div class="history-header">
       <div class="history-title" id="history-count">All naps</div>
@@ -244,16 +257,26 @@
 </div>
 
 <script>
-  const API       = '/api/naps';
+  const API        = '/api/naps';
   const ACTIVE_API = '/api/active';
+  const POLL_MS    = 5000; // sync with server every 5 seconds
 
-  let napStart      = null;
+  // napStartTs: the server-authoritative start timestamp (ms).
+  // When non-null we are in napping state.
+  let napStartTs    = null;
   let timerInterval = null;
+  let pollInterval  = null;
   let sortMode      = 'newest';
   let allNaps       = [];
+  let isBusy        = false; // prevents double-taps
 
-  /* ── Formatting ── */
+  /* ── Helpers ── */
   function fmt2(n) { return String(n).padStart(2, '0'); }
+
+  function fmtElapsed(ms) {
+    const s = Math.floor(ms / 1000);
+    return fmt2(Math.floor(s / 3600)) + ':' + fmt2(Math.floor((s % 3600) / 60)) + ':' + fmt2(s % 60);
+  }
 
   function fmtDuration(ms) {
     const s = Math.floor(ms / 1000), h = Math.floor(s / 3600),
@@ -264,8 +287,7 @@
   }
 
   function fmtDurationShort(ms) {
-    const s = Math.floor(ms / 1000), h = Math.floor(s / 3600),
-          m = Math.floor((s % 3600) / 60);
+    const s = Math.floor(ms / 1000), h = Math.floor(s / 3600), m = Math.floor((s % 3600) / 60);
     return h > 0 ? h + 'h ' + m + 'm' : m + 'm';
   }
 
@@ -298,95 +320,136 @@
 
   /* ── Stats ── */
   function updateStats() {
-    const today = new Date().toDateString();
+    const today     = new Date().toDateString();
     const todayNaps = allNaps.filter(n => new Date(n.start).toDateString() === today);
-    const totalMs = todayNaps.reduce((s, n) => s + n.duration, 0);
+    const totalMs   = todayNaps.reduce((s, n) => s + n.duration, 0);
     document.getElementById('stat-count').textContent = todayNaps.length;
     document.getElementById('stat-total').textContent = totalMs > 0 ? fmtDurationShort(totalMs) : '0m';
     const sorted = [...allNaps].sort((a, b) => b.start - a.start);
-    document.getElementById('stat-last').textContent = sorted.length ? fmtTime(sorted[0].start) : '—';
+    document.getElementById('stat-last').textContent  = sorted.length ? fmtTime(sorted[0].start) : '—';
   }
 
-  /* ── Timer display ── */
+  /* ── Timer tick (local interval, anchored to server start time) ── */
   function tick() {
-    if (!napStart) return;
-    const s = Math.floor((Date.now() - napStart) / 1000);
-    document.getElementById('stopwatch').textContent =
-      fmt2(Math.floor(s / 3600)) + ':' + fmt2(Math.floor((s % 3600) / 60)) + ':' + fmt2(s % 60);
+    if (napStartTs === null) return;
+    document.getElementById('stopwatch').textContent = fmtElapsed(Date.now() - napStartTs);
   }
 
-  /* ── Enter napping UI state ── */
+  /* ── Enter napping UI (idempotent — safe to call if already active) ── */
   function enterNappingState(startTs) {
-    napStart = startTs;
-    clearInterval(timerInterval);
-    timerInterval = setInterval(tick, 1000);
-    tick(); // update display immediately without waiting 1s
-    document.getElementById('btn-start').style.display = 'none';
-    document.getElementById('btn-end').style.display = 'inline-block';
-    document.getElementById('btn-cancel').style.display = 'inline-block';
-    document.getElementById('status-label').textContent = 'Napping…';
-    const icon = document.getElementById('sleep-icon');
-    icon.textContent = '😴';
-    icon.className = 'sleep-icon pulse';
-    document.getElementById('stopwatch').className = 'stopwatch active-timer';
+    const alreadyNapping = napStartTs !== null;
+    napStartTs = startTs;
+    if (!alreadyNapping) {
+      // Only animate / swap buttons on first entry, not on every poll
+      clearInterval(timerInterval);
+      timerInterval = setInterval(tick, 1000);
+      document.getElementById('btn-start').style.display  = 'none';
+      document.getElementById('btn-end').style.display    = 'inline-block';
+      document.getElementById('btn-cancel').style.display = 'inline-block';
+      document.getElementById('status-label').textContent = 'Napping…';
+      const icon = document.getElementById('sleep-icon');
+      icon.textContent = '😴';
+      icon.className   = 'sleep-icon pulse';
+      document.getElementById('stopwatch').className = 'stopwatch active-timer';
+    }
     document.getElementById('start-hint').textContent = 'Started at ' + fmtTime(startTs);
+    tick();
   }
 
-  /* ── Reset to idle UI state ── */
+  /* ── Reset to idle UI ── */
   function resetTracker() {
-    napStart = null;
+    napStartTs = null;
     clearInterval(timerInterval);
-    document.getElementById('stopwatch').textContent = '00:00:00';
-    document.getElementById('stopwatch').className = 'stopwatch';
-    document.getElementById('btn-start').style.display = 'inline-block';
-    document.getElementById('btn-end').style.display = 'none';
+    document.getElementById('stopwatch').textContent   = '00:00:00';
+    document.getElementById('stopwatch').className     = 'stopwatch';
+    document.getElementById('btn-start').style.display  = 'inline-block';
+    document.getElementById('btn-end').style.display    = 'none';
     document.getElementById('btn-cancel').style.display = 'none';
     document.getElementById('status-label').textContent = 'Ready to track';
     const icon = document.getElementById('sleep-icon');
     icon.textContent = '🌙';
-    icon.className = 'sleep-icon';
+    icon.className   = 'sleep-icon';
     document.getElementById('start-hint').textContent = '';
+    document.getElementById('toast').style.display = 'none';
   }
 
-  /* ── Nap controls ── */
+  /* ── Poll server for active nap state ── */
+  async function pollActive() {
+    try {
+      const res  = await fetch(ACTIVE_API);
+      const data = await res.json();
+      if (data.active) {
+        enterNappingState(data.start);
+      } else if (napStartTs !== null) {
+        // Another device ended the nap — reset this screen
+        resetTracker();
+        // Reload nap list so the new record appears
+        allNaps = await fetch(API).then(r => r.json());
+        updateStats();
+        if (document.getElementById('page-history').classList.contains('active')) renderHistory();
+      }
+    } catch { /* silent — don't spam toasts on minor network blips */ }
+  }
+
+  /* ── Start polling ── */
+  function startPolling() {
+    clearInterval(pollInterval);
+    pollInterval = setInterval(pollActive, POLL_MS);
+  }
+
+  /* ── Button actions ── */
   async function startNap() {
+    if (isBusy || napStartTs !== null) return;
+    isBusy = true;
     const start = Date.now();
     try {
-      await fetch(ACTIVE_API, {
+      const res = await fetch(ACTIVE_API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ start })
       });
+      if (!res.ok) {
+        const err = await res.json();
+        showToast(err.error || 'Could not start nap.', true);
+      } else {
+        enterNappingState(start);
+      }
     } catch {
       showToast('Could not reach server.', true);
-      return;
     }
-    enterNappingState(start);
-    document.getElementById('toast').style.display = 'none';
+    isBusy = false;
   }
 
   async function endNap() {
-    const napEnd = Date.now();
-    const nap = { start: napStart, end: napEnd, duration: napEnd - napStart };
+    if (isBusy || napStartTs === null) return;
+    isBusy = true;
+    const napEnd  = Date.now();
+    const nap     = { start: napStartTs, end: napEnd, duration: napEnd - napStartTs };
+    const napCopy = { ...nap };
     resetTracker();
     try {
-      const res = await fetch(API, {
+      const res   = await fetch(API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(nap)
+        body: JSON.stringify(napCopy)
       });
       const saved = await res.json();
       allNaps.push(saved);
       updateStats();
-      showToast('🐳 Nap saved! ' + fmtTime(nap.start) + ' → ' + fmtTime(nap.end) + ' (' + fmtDuration(nap.duration) + ')');
+      showToast('🐳 Nap saved! ' + fmtTime(napCopy.start) + ' → ' + fmtTime(napCopy.end) + ' (' + fmtDuration(napCopy.duration) + ')');
+      if (document.getElementById('page-history').classList.contains('active')) renderHistory();
     } catch {
       showToast('Could not save nap. Is the server running?', true);
     }
+    isBusy = false;
   }
 
   async function cancelNap() {
+    if (isBusy) return;
+    isBusy = true;
     resetTracker();
     try { await fetch(ACTIVE_API, { method: 'DELETE' }); } catch { /* silent */ }
+    isBusy = false;
   }
 
   /* ── History ── */
@@ -415,7 +478,7 @@
       : naps.length + ' nap' + (naps.length !== 1 ? 's' : '') + (filterDate ? ' on this date' : ' total');
 
     const icons = ['🐳', '🐋', '⭐', '🌙', '🐟'];
-    const list = document.getElementById('nap-list');
+    const list  = document.getElementById('nap-list');
     if (naps.length === 0) {
       list.innerHTML = '<div class="empty-state"><div class="empty-icon">🌊</div><div>No nap records yet.<br>Head to the Tracker tab to get started!</div></div>';
       return;
@@ -451,29 +514,22 @@
     if (page === 'history') renderHistory();
   }
 
-  /* ── Re-sync timer when tab/screen becomes visible again ── */
-  document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible' && napStart) {
-      tick(); // immediately correct the display
-    }
-  });
-
-  /* ── Init: load naps + check for in-progress nap ── */
+  /* ── Init ── */
   async function init() {
     try {
-      const [naps, active] = await Promise.all([
+      const [naps, activeData] = await Promise.all([
         fetch(API).then(r => r.json()),
         fetch(ACTIVE_API).then(r => r.json())
       ]);
       allNaps = naps;
       updateStats();
-      if (active && active.start) {
-        // A nap was started and never ended — resume the timer
-        enterNappingState(active.start);
+      if (activeData.active && activeData.start) {
+        enterNappingState(activeData.start);
       }
     } catch {
-      showToast('Cannot reach server. Make sure server.js is running.', true);
+      showToast('Cannot reach server. Make sure it is running.', true);
     }
+    startPolling();
   }
 
   init();
