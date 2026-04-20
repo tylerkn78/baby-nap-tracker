@@ -1,0 +1,12 @@
+{
+  "name": "baby-nap-tracker",
+  "version": "1.0.0",
+  "description": "Baby nap time tracker with persistent server-side storage",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
